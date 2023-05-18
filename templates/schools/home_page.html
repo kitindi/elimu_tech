@@ -1,0 +1,52 @@
+{% extends 'base.html' %} {% load static %}{% block content %}
+<div class="w-full max-w-[1100px] mx-auto py-16 h-[80vh]">
+  <div class="md:grid md:grid-cols-12 gap-4 h-full">
+    <div class="md:col-span-5 h-full">
+      <img
+        src="{% static 'images/hero.jpg' %}"
+        alt=""
+        class="w-full object-cover h-[75vh]"
+      />
+    </div>
+    <div class="md:col-span-7 h-full pl-20 py-16">
+      <h1 class="text-[2.5rem] font-[500] text-slate-800">
+        Become The 21<sup>st</sup> Centuary Educational RockStar, Learn & Share.
+      </h1>
+      <p class="font-light leading-loose mt-5 text-slate-700 text-[1rem]">
+        Upgrade your skills and become the expert teacher by learning from the
+        well curated resources from experienced and successful teachers ready to
+        work anywhere in the world 🌍.
+      </p>
+    </div>
+  </div>
+</div>
+<section
+  class="w-full bg-emerald-800 h-[65vh] flex justify-center items-center"
+>
+  <div class="md:w-[700px]">
+    <h2 class="text-[2rem] text-white">
+      “Don’t struggle to be a better teacher than everybody else. Simply be a
+      better teacher than you ever thought you could be.”
+    </h2>
+    <p class="text-[1.2rem] text-slate-300 mt-2">– Robert John Meehan</p>
+  </div>
+</section>
+<section class="w-full h-[70vh] flex justify-center items-center">
+  <div class="w-ful max-w-[1100px] mx-auto grid grid-cols-12 py-12">
+    <div class="col-span-7 p-8 h-full">
+      <h2 class="text-[2.25rem] font-normal text-slate-800">
+        Join Awesome Community of Enthusiatic Teachers for Impactful Career
+        Growth
+      </h2>
+      <p class="text-slate-700 leading-loose mt-8 text-[1.05rem]">
+        You are not alone 🙂. The quest for career advancement is everyone's
+        wish. This platform gives you access to all the arsenals you need to
+        keep under you belt ready to transform the interactions you have with
+        students, parents and team mates in much more meaningful way. Blog
+        posts, resources and events are here to enrich your teaching experience
+      </p>
+    </div>
+    <div class="col-span-5"></div>
+  </div>
+</section>
+{% endblock content%}

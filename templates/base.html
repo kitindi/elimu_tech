@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "DM Sans", sans-serif;
+      }
+    </style>
+    <title>Teacherzboard</title>
+  </head>
+  <body>
+    <header class="w-full">
+      <nav
+        class="w-full max-w-[1100px] mx-auto flex md:justify-between md:items-center py-6"
+      >
+        <div class="flex gap-12 items-center py-2">
+          <a href="#"
+            ><img src="{% static 'images/logov3.svg' %}" alt="logo" class="h-9"
+          /></a>
+
+          <div class="flex gap-8">
+            <a href="#">Jobs</a><a href="">Schools</a><a href="">Blog</a
+            ><a href="">Resources & Events</a>
+          </div>
+        </div>
+        <div class="flex gap-6 items-center">
+          <a href="#" class="border-2 border-slate-400 py-2 px-6">Sign in</a
+          ><a href="#" class="bg-emerald-500 text-white py-2 px-3"
+            >Join Writers Team Free</a
+          >
+        </div>
+      </nav>
+    </header>
+    {% block content %} {% endblock content %}
+  </body>
+</html>
