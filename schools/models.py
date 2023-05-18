@@ -27,3 +27,10 @@ class School(models.Model):
 
     def __str__(self):
         return self.school_name
+
+
+class Newsletter(models.Model):
+    email_address = models.EmailField(max_length=225)
+
+    def __str__(self):
+        return self.email_address
