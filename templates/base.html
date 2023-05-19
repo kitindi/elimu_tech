@@ -12,6 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/9ca08a6a82.js"
+      crossorigin="anonymous"
+    ></script>
     <style>
       body {
         font-family: "DM Sans", sans-serif;
@@ -25,9 +29,13 @@
         class="w-full max-w-[1100px] mx-auto flex md:justify-between md:items-center py-6"
       >
         <div class="flex gap-12 items-center py-2">
-          <a href="#"
-            ><img src="{% static 'images/logov3.svg' %}" alt="logo" class="h-9"
-          /></a>
+          <a href="#" class="text-[1.75rem] font-bold text-emerald-400"
+            >mwalimu Hub
+            <span
+              ><i
+                class="fa-solid fa-lightbulb text-[2rem] text-amber-500"
+              ></i></span
+          ></a>
 
           <div class="flex gap-8">
             <a href="#">Jobs</a><a href="">Schools</a><a href="">Blog</a
@@ -35,7 +43,7 @@
           </div>
         </div>
         <div class="flex gap-6 items-center">
-          <a href="#" class="border-2 border-slate-400 py-2 px-6">Sign in</a
+          <a href="#" class="border-2 border-emerald-200 py-2 px-6">Sign in</a
           ><a href="#" class="bg-emerald-500 text-white py-2 px-3"
             >Join Writers Team Free</a
           >
@@ -44,10 +52,17 @@
     </header>
     {% block content %} {% endblock content %}
 
-    <footer class="full h-[60vh] bg-slate-700 flex justify-center items-center">
-      <div class="w-full max-w-[1100px] mx-auto grid grid-cols-9">
+    <footer
+      class="full h-[60vh] bg-slate-700 flex flex-col justify-center items-center"
+    >
+      <div class="w-full max-w-[1100px] mx-auto grid grid-cols-9 py-16">
         <div class="col-span-5 pr-16">
-          <h3 class="text-[2.25rem] text-emerald-400 mb-5">mwalimu Hub</h3>
+          <h3 class="text-[2.25rem] text-emerald-400 mb-5 font-black">
+            mwalimu Hub
+            <span
+              ><i class="fa-solid fa-lightbulb text-[2rem] text-amber-500"></i
+            ></span>
+          </h3>
           <p class="text-[1rem] text-slate-300 leading-normal">
             Join the more than 20+ creators who use mwalimu Hub blog to share
             their knowledge. Easily create a content in a powerful yet simple
@@ -58,7 +73,8 @@
           <h3 class="text-emerald-400">Explore</h3>
           <ul class="text-slate-300 text-[.95rem] mt-4">
             <li class="mb-2"><a href="#">Jobs</a></li>
-            <li class="mb-2"><a href="#">Blog & Press</a></li>
+            <li class="mb-2"><a href="#">Blog</a></li>
+            <li class="mb-2"><a href="#">Events</a></li>
             <li class="mb-2"><a href="#">Newsletter</a></li>
           </ul>
         </div>
@@ -70,6 +86,11 @@
             <li class="mb-2"><a href="#">Content Guidelines</a></li>
           </ul>
         </div>
+      </div>
+      <div class="w-full max-w-[1100px] mx-auto">
+        <p class="text-[.75rem] text-slate-400">
+          &copy; 2023 mwalimu Hub, All rights reserved.
+        </p>
       </div>
     </footer>
   </body>
