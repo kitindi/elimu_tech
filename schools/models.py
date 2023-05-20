@@ -18,7 +18,7 @@ class School(models.Model):
     category = models.CharField(max_length=255, choices=CAT_CHOICES)
     company_sizes = models.IntegerField()
     description = models.TextField()
-    # thumbnail = models.ImageField(upload_to='images/')
+    thumbnail = models.ImageField(default="default.png")
     website_url = models.URLField(blank=True)
     twitter_url = models.URLField(blank=True)
     facebook_url = models.URLField(blank=True)

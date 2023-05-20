@@ -1,5 +1,5 @@
 from django.forms import ModelForm, EmailInput
-from .models import Newsletter
+from .models import Newsletter, School
 
 
 class NewsletterForm(ModelForm):
