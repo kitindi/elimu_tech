@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import School, Newsletter
+from .models import School, Newsletter, Job
 
 # Register your models here.
 
@@ -10,5 +10,10 @@ class SchoolAdmin(admin.ModelAdmin):
 
 
 @admin.register(Newsletter)
-class SchoolAdmin(admin.ModelAdmin):
+class NewsletterAdmin(admin.ModelAdmin):
     list_display = ("email_address",)
+
+
+@admin.register(Job)
+class JobAdmin(admin.ModelAdmin):
+    list_display = ("title", "company_name", "positions", "posted_on")

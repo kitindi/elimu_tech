@@ -34,3 +34,16 @@ class Newsletter(models.Model):
 
     def __str__(self):
         return self.email_address
+
+
+class Job(models.Model):
+    title = models.CharField(max_length=225)
+    positions = models.CharField(max_length=225)
+    industry = models.CharField(max_length=225)
+    company_name = models.CharField(max_length=255)
+    comapny_size = models.IntegerField()
+    image = models.ImageField()
+    description = models.TextField()
+    location = models.CharField(max_length=225)
+    componay_url = models.URLField(blank=True)
+    posted_on = models.DateTimeField(auto_now_add=True, null=True)
