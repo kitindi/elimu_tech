@@ -29,7 +29,9 @@
         class="w-full max-w-[1100px] mx-auto flex md:justify-between md:items-center py-6"
       >
         <div class="flex gap-12 items-center py-2">
-          <a href="#" class="text-[1.75rem] font-bold text-emerald-400"
+          <a
+            href="{% url 'home' %}"
+            class="text-[1.75rem] font-bold text-emerald-400"
             >mwalimu Hub
             <span
               ><i
@@ -38,7 +40,8 @@
           ></a>
 
           <div class="flex gap-8">
-            <a href="#">Jobs</a><a href="">Schools</a><a href="">Blog</a
+            <a href="{% url 'jobs' %}">Jobs</a
+            ><a href="{% url 'schools' %}">Schools</a><a href="">Blog</a
             ><a href="">Resources & Events</a>
           </div>
         </div>
