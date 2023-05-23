@@ -53,3 +53,6 @@ class Job(models.Model):
     description = models.TextField()
     location = models.CharField(max_length=225)
     componay_url = models.URLField(blank=True)
+
+    class Meta:
+        ordering = ["-posted_on"]
