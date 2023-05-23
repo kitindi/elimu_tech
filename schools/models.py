@@ -37,7 +37,14 @@ class Newsletter(models.Model):
 
 
 class Job(models.Model):
+    JOB_TYPE = (
+        ("Full Time", "Full Time"),
+        ("Part Time", "Part Time"),
+        ("Intenship", "Intenship"),
+    )
     title = models.CharField(max_length=225)
+    job_type = models.CharField(max_length=225, choices=JOB_TYPE)
+    posted_on = models.DateTimeField(auto_now_add=True, blank=True)
     positions = models.CharField(max_length=225)
     industry = models.CharField(max_length=225)
     company_name = models.CharField(max_length=255)

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import NewsletterForm
+from .models import Job
 
 # Create your views here.
 
@@ -16,7 +17,9 @@ def home(request):
 
 
 def jobboard(request):
-    return render(request, "schools/jobboard.html")
+    jobs = Job.objects.all()
+    context = {"jobs": jobs}
+    return render(request, "schools/jobboard.html", context)
 
 
 def schools(request):
