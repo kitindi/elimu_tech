@@ -6,23 +6,20 @@
       Discover your dream job at top schools
     </h1>
     <div class="mt-5 py-3">
-      <form class="grid grid-cols-12 gap-5">
-        <div class="col-span-5">
+      <form class="md:grid md:grid-cols-12 md:gap-5 px-5" method="GET">
+        <div class="md:col-span-10">
           <input
             type="text"
             class="w-full bg-slate-50 py-4 px-5 border-b-2 border-slate-150 outline-none"
-            placeholder="Job title or keyword"
-          />
-        </div>
-        <div class="col-span-5">
-          <input
-            type="text"
-            class="w-full bg-slate-50 py-4 px-5 border-b-2 border-slate-150 outline-none"
-            placeholder="School name or country"
+            placeholder="Job title e.i Mathematics teacher"
+            name="positions"
           />
         </div>
         <div class="col-span-2">
-          <button class="bg-emerald-500 text-white py-4 px-3 w-full rounded-sm">
+          <button
+            class="bg-emerald-500 text-white py-4 px-3 w-full rounded-sm"
+            type="submit"
+          >
             Search
           </button>
         </div>
@@ -47,7 +44,7 @@
               {{ job.positions }}
             </h1>
             <span class="text-slate-600 text-[.8rem]">
-              posted on : {{ job.posted_on|timesince }}</span
+              Published: {{ job.posted_on|timesince }} ago</span
             >
           </div>
           <div class="text-slate-600 py-2 flex justify-between">
@@ -66,11 +63,11 @@
           </div>
           <div class="text-slate-500 text-[.8rem] py-2 flex gap-8">
             <span
-              class="font-semibold border-2 border-slate-300 rounded-md p-[8px] text-[.7rem]"
+              class="font-semibold border-2 border-slate-300 rounded-md p-[8px] text-[.6rem]"
               ><i class="fa-solid fa-earth-africa"></i> {{ job.location }}</span
             >
             <span
-              class="font-semibold border-2 border-slate-300 rounded-md p-[8px] text-[.7rem]"
+              class="font-semibold border-2 border-slate-300 rounded-md p-[8px] text-[.6rem]"
             >
               <i class="fa-solid fa-briefcase"></i>
               {{ job.job_type}}

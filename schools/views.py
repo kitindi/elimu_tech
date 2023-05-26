@@ -17,7 +17,12 @@ def home(request):
 
 
 def jobboard(request):
-    jobs = Job.objects.all()
+    search_query = ""
+
+    if request.GET.get("positions"):
+        search_query = request.GET.get("positions")
+
+    jobs = Job.objects.filter(positions__icontains=search_query)
     context = {"jobs": jobs}
     return render(request, "schools/jobboard.html", context)
 
