@@ -1,25 +1,28 @@
 {% extends 'base.html' %} {% block content %}
 <section class="w-full h-[40vh] flex items-center justify-center bg-slate-100">
-  <div class="w-full max-w-[1100px] mx-auto py-8">
+  <div class="w-full max-w-[1100px] mx-auto py-8 px-5">
     <p class="text-[2.1rem] font-semibold text-slate-600 mb-3">100+ jobs</p>
     <h1 class="text-[1.2rem] font-normal text-slate-600">
       Discover your dream job at top schools
     </h1>
-    <div class="mt-5 py-3">
+    <div class="mt-5 py-2">
       <form class="md:grid md:grid-cols-12 md:gap-5 px-5" method="GET">
         <div class="md:col-span-10">
           <input
             type="text"
-            class="w-full bg-slate-50 py-4 px-5 border-b-2 border-slate-150 outline-none"
+            class="w-full bg-slate-50 py-3 px-5 border-b-2 border-slate-150 outline-none"
             placeholder="Job title e.i Mathematics teacher"
             name="positions"
           />
         </div>
         <div class="col-span-2">
           <button
-            class="bg-emerald-500 text-white py-4 px-3 w-full rounded-sm"
+            class="bg-emerald-500 text-white py-3 px-3 w-full rounded-sm"
             type="submit"
           >
+            <span
+              ><i class="fa-solid fa-magnifying-glass text-white mr-3"></i
+            ></span>
             Search
           </button>
         </div>
@@ -61,17 +64,19 @@
               {{ job.description|truncatechars:200}}
             </p>
           </div>
-          <div class="text-slate-500 text-[.8rem] py-2 flex gap-8">
-            <span
-              class="font-semibold border-2 border-slate-300 rounded-md p-[8px] text-[.6rem]"
-              ><i class="fa-solid fa-earth-africa"></i> {{ job.location }}</span
-            >
-            <span
-              class="font-semibold border-2 border-slate-300 rounded-md p-[8px] text-[.6rem]"
-            >
-              <i class="fa-solid fa-briefcase"></i>
-              {{ job.job_type}}
-            </span>
+          <div class="text-slate-500 text-[.8rem] py-2 grid grid-cols-12 gap-8">
+            <div class="col-span-12">
+              <span
+                class="font-semibold border-2 border-slate-300 rounded-md p-[8px] text-[.6rem] mr-2"
+                ><i class="fa-solid fa-earth-africa"></i> {{job.location}}</span
+              >
+              <span
+                class="font-semibold border-2 border-slate-300 rounded-md p-[8px] text-[.6rem]"
+              >
+                <i class="fa-solid fa-briefcase"></i>
+                {{ job.job_type}}
+              </span>
+            </div>
           </div>
         </div>
       </a>

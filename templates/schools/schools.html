@@ -1,28 +1,35 @@
 {% extends 'base.html' %} {% block content %}
 <section class="w-full h-[40vh] flex items-center justify-center bg-slate-100">
   <div class="w-full max-w-[1100px] mx-auto py-8">
-    <p class="text-[2.1rem] font-semibold text-slate-600 mb-3">100+ jobs</p>
-    <h1 class="text-[1.2rem] font-normal text-slate-600">
-      Discover your dream job at top schools
+    <p class="text-[2rem] font-semibold text-slate-600 mb-3">
+      Explore schools you wish to work with
+    </p>
+    <h1 class="text-[1.1rem] font-normal text-slate-600">
+      We show your dream offices before you apply to make sure you'll love
+      working there.
     </h1>
+
     <div class="mt-5 py-3">
       <form class="grid grid-cols-12 gap-5">
         <div class="col-span-5">
           <input
             type="text"
-            class="w-full bg-slate-50 py-4 px-5 border-b-2 border-slate-150 outline-none"
-            placeholder="Job title or keyword"
+            class="w-full bg-slate-50 py-3 px-5 border-b-2 border-slate-150 outline-none"
+            placeholder="Location"
           />
         </div>
         <div class="col-span-5">
           <input
             type="text"
-            class="w-full bg-slate-50 py-4 px-5 border-b-2 border-slate-150 outline-none"
-            placeholder="School name or country"
+            class="w-full bg-slate-50 py-3 px-5 border-b-2 border-slate-150 outline-none"
+            placeholder="Curriculum"
           />
         </div>
         <div class="col-span-2">
-          <button class="bg-emerald-500 text-white py-4 px-3 w-full rounded-sm">
+          <button class="bg-emerald-500 text-white py-3 px-3 w-full rounded-sm">
+            <span
+              ><i class="fa-solid fa-magnifying-glass text-white mr-3"></i
+            ></span>
             Search
           </button>
         </div>
@@ -31,55 +38,45 @@
   </div>
 </section>
 <section class="w-full py-30">
-  <div class="w-full max-w-[960px] mx-auto py-8 grid grid-cols-12 gap-4">
-    <div class="col-span-12 p-4">
-      {% for job in jobs %}
-      <a
-        href="#"
-        class="grid grid-cols-12 border-[2px] border-slate-200 p-4 rounded-md my-5"
-      >
-        <div class="col-span-2 flex justify-start items-center">
-          <img src="{{ job.image.url }}" alt="" class="rounded-lg h-24 w-24" />
-        </div>
-        <div class="col-span-10">
-          <div class="flex justify-between mb-2 pr-8">
-            <h1 class="text-slate-700 text-[.9rem] font-semibold">
-              {{ job.positions }}
-            </h1>
-            <span class="text-slate-600 text-[.8rem]">
-              Published: {{ job.posted_on|timesince }}
-            </span>
-          </div>
-          <div class="text-slate-600 py-2 flex justify-between">
-            <span class="font-semibold text-[.9rem]"
-              >{{ job.company_name }}</span
-            >
-            <span class="font-semibold">
-              <i class="fa-solid fa-money-check-dollar text-slate-400"></i>
-              Not disclosed</span
-            >
-          </div>
-          <div class="py-2">
-            <p class="text-slate-500 text-[.8rem]">
-              {{ job.description|truncatechars:200}}
+  <div class="w-full max-w-[1100px] mx-auto py-8 grid grid-cols-12 gap-4">
+    <div class="col-span-4 p-3 border-2 border-slate-200 rounded-md">
+      <div class="w-full">
+        <img src="" alt="" class="" />
+        <img src="" alt="" class="" />
+      </div>
+      <div class="w-ful py-4">
+        <h3 class="text-slate-800 text-[.95rem] font-semibold mb-2">
+          Academic Secondary International School
+        </h3>
+        <p class="text-[.85rem] leading-normal text-slate-600">
+          imply dummy text of the printing and typesetting industry. Lorem Ipsum
+          has been the industry's standard dummy text ever since the 1500s, when
+          an unknown printer took a galley of type and scrambled it to make a
+          type specimen book.
+        </p>
+        <div class="w-full flex gap-3 justify-between">
+          <div class="text-[.8rem] py-3 text-left flex-1">
+            <p class="font-semibold text-slate-600 mb-2">
+              <i class="fa-solid fa-briefcase"></i> Industry
             </p>
+            <span class="font-normal text-slate-500">Education</span>
           </div>
-          <div class="text-slate-500 text-[.8rem] py-2 flex gap-8">
-            <span
-              class="font-semibold border-2 border-slate-300 rounded-md p-[8px] text-[.6rem]"
-              ><i class="fa-solid fa-earth-africa"></i> {{ job.location }}</span
+          <div class="text-[.8rem] py-3 text-left flex-1">
+            <p class="font-semibold text-slate-600 mb-2">
+              <i class="fa-solid fa-user-group"></i> Size
+            </p>
+            <span class="font-normal text-slate-500">5 - 10 employees</span>
+          </div>
+          <div class="text-[.8rem] py-3 text-left flex-1">
+            <p class="font-semibold text-slate-600 mb-2">
+              <i class="fa-solid fa-location-dot"></i> Location
+            </p>
+            <span class="font-normal text-slate-500"
+              >Dar es Salaam, Tanzania</span
             >
-            <span
-              class="font-semibold border-2 border-slate-300 rounded-md p-[8px] text-[.6rem]"
-            >
-              <i class="fa-solid fa-briefcase"></i>
-              {{ job.job_type}}
-            </span>
           </div>
         </div>
-      </a>
-
-      {% endfor %}
+      </div>
     </div>
   </div>
 </section>

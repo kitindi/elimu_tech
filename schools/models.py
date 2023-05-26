@@ -5,9 +5,9 @@ from django.db import models
 
 class School(models.Model):
     CAT_CHOICES = (
-        ("TZ", "NECTA School"),
-        ("UK", "Cambridge International School"),
-        ("IB", "International Baccalaureate® (IB)"),
+        ("NECTA School", "NECTA School"),
+        ("Cambridge International School", "Cambridge International School"),
+        ("International Baccalaureate® (IB)", "International Baccalaureate® (IB)"),
     )
 
     school_name = models.CharField(max_length=125)
@@ -19,6 +19,7 @@ class School(models.Model):
     company_sizes = models.IntegerField()
     description = models.TextField()
     thumbnail = models.ImageField(default="default.png")
+    school_logo = models.ImageField(default="default.png")
     website_url = models.URLField(blank=True)
     twitter_url = models.URLField(blank=True)
     facebook_url = models.URLField(blank=True)
