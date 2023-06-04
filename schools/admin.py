@@ -16,4 +16,4 @@ class NewsletterAdmin(admin.ModelAdmin):
 
 @admin.register(Job)
 class JobAdmin(admin.ModelAdmin):
-    list_display = ("title", "company_name", "positions")
+    list_display = ("title", "company_name", "company_summary")

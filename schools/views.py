@@ -22,9 +22,16 @@ def jobboard(request):
     if request.GET.get("positions"):
         search_query = request.GET.get("positions")
 
-    jobs = Job.objects.filter(positions__icontains=search_query)
+    jobs = Job.objects.filter(title__icontains=search_query)
     context = {"jobs": jobs}
     return render(request, "schools/jobboard.html", context)
+
+
+def jobdetails(request, id):
+    job = Job.objects.get(id=id)
+
+    context = {"job": job}
+    return render(request, "schools/jobdetails.html", context)
 
 
 def schools(request):

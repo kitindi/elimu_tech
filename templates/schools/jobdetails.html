@@ -1,0 +1,55 @@
+{% extends 'base.html' %} {% block content %}
+
+<section class="w-full py-30">
+  <div class="w-full max-w-[1050px] mx-auto grid grid-cols-12 gap-3">
+    <div class="col-span-8 pt-16 pb-6 pr-20">
+      <p class="text-[.9rem] font-semibold mb-4 text-emerald-400">
+        {{ job.company_name.upper }}
+      </p>
+      <p class="text-slate-700 text-[1.5rem] font-semibold my-2">
+        {{ job.title }}
+      </p>
+      <p class="text-[.8rem] text-slate-500">
+        <span class="mr-2">
+          <i class="fa-solid fa-location-dot mr-2"></i> {{ job.location }}</span
+        >
+        <span class="ml-3 mr-2"
+          ><i class="fa-solid fa-briefcase"></i> Industry:
+          {{job.industry}}</span
+        >
+      </p>
+    </div>
+    <div class="col-span-2 py-16 relative">
+      <div class="w-full px-4 sticky">
+        <div class="px-4 border-2 border-slate-200 rounded-md h-fit">
+          subscribe
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-full max-w-[1050px] mx-auto py-8 grid grid-cols-12 gap-3">
+    <div
+      class="col-span-8 pt-4 pb-14 pr-20 ck ck-content border-b-2 border-slate-200"
+    >
+      <p class="text-justify text-slate-400 leading-normal">
+        {{ job.description | safe}}
+      </p>
+    </div>
+    <div class="col-span-2 py-8">
+      <div class="px-4 h-fit"></div>
+    </div>
+  </div>
+  <div class="w-full max-w-[1050px] mx-auto grid grid-cols-12 gap-3">
+    <div class="col-span-8 py-10 pr-20 ck ck-content">
+      <a
+        href="{% url 'jobs' %}"
+        class="block w-full py-4 px-16 text-center bg-emerald-400 text-white font-semibold text-[1.2rem]"
+      >
+        Browse All Jobs</a
+      >
+    </div>
+    <div class="col-span-4"></div>
+  </div>
+</section>
+
+{% endblock %}

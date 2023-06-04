@@ -16,6 +16,13 @@
       src="https://kit.fontawesome.com/9ca08a6a82.js"
       crossorigin="anonymous"
     ></script>
+    <link
+      href="{% static 'django_ckeditor_5/dist/styles.css' %}"
+      type="text/css"
+      media="all"
+      rel="stylesheet"
+    />
+    <script src="{% static 'django_ckeditor_5/dist/bundle.js' %}"></script>
     <style>
       body {
         font-family: "DM Sans", sans-serif;
@@ -24,9 +31,9 @@
     <title>mwalimu Hub</title>
   </head>
   <body>
-    <header class="w-full">
+    <header class="w-full bg-slate-100">
       <nav
-        class="w-full max-w-[1100px] mx-auto flex md:justify-between md:items-center py-6"
+        class="w-full max-w-[1200px] mx-auto flex md:justify-between md:items-center py-2"
       >
         <div class="flex gap-12 items-center py-2">
           <a
@@ -58,7 +65,7 @@
     <footer
       class="full h-[60vh] bg-slate-700 flex flex-col justify-center items-center"
     >
-      <div class="w-full max-w-[1100px] mx-auto grid grid-cols-9 py-16">
+      <div class="w-full max-w-[1200px] mx-auto grid grid-cols-9 py-16">
         <div class="col-span-5 pr-16">
           <h3 class="text-[2.25rem] text-emerald-400 mb-5 font-black">
             mwalimu Hub
