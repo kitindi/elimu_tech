@@ -19,10 +19,10 @@ def home(request):
 def jobboard(request):
     search_query = ""
 
-    if request.GET.get("positions"):
-        search_query = request.GET.get("positions")
+    if request.GET.get("industry"):
+        search_query = request.GET.get("industry")
 
-    jobs = Job.objects.filter(title__icontains=search_query)
+    jobs = Job.objects.filter(industry__icontains=search_query)
     context = {"jobs": jobs}
     return render(request, "schools/jobboard.html", context)
 
