@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import NewsletterForm
 from .models import Job
+from django.db.models import Q
 
 # Create your views here.
 
@@ -29,8 +30,14 @@ def jobboard(request):
 
 def jobdetails(request, id):
     job = Job.objects.get(id=id)
+    job_industry = job.industry
+    job_id = job.id
 
-    context = {"job": job}
+    related_jobs = Job.objects.filter(
+        Q(industry__icontains=job_industry) & ~Q(id=job.id)
+    )
+
+    context = {"job": job, "related_jobs": related_jobs}
     return render(request, "schools/jobdetails.html", context)
 
 

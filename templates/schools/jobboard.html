@@ -1,7 +1,9 @@
 {% extends 'base.html' %} {% block content %}
 <section class="w-full h-[40vh] flex items-center justify-center bg-slate-100">
   <div class="w-full max-w-[1200px] mx-auto py-8 px-5">
-    <p class="text-[2.1rem] font-semibold text-slate-600 mb-3">100+ jobs</p>
+    <p class="text-[2.1rem] font-semibold text-slate-600 mb-3">
+      {{ jobs | length }}+ jobs
+    </p>
     <h1 class="text-[1.2rem] font-normal text-slate-600">
       Discover your dream job at top companies
     </h1>
@@ -32,18 +34,18 @@
 </section>
 <section class="w-full py-30">
   <div class="w-full max-w-[1200px] mx-auto py-8 grid grid-cols-12 gap-3">
-    <div class="col-span-9 p-4">
+    <div class="col-span-9 py-4 pr-8">
       {% for job in jobs %}
       <a
         href="{% url 'job' id=job.id %}"
-        class="grid grid-cols-12 border-[2px] border-slate-200 p-4 rounded-md my-5"
+        class="grid grid-cols-12 border-[2px] border-slate-200 p-4 rounded-md my-5 shadowed-md"
       >
         <div class="col-span-2 flex justify-start items-center">
           <img src="{{ job.image.url }}" alt="" class="rounded-lg w-20" />
         </div>
         <div class="col-span-10">
           <div class="flex justify-between mb-2 pr-8">
-            <h1 class="text-slate-700 text-[.9rem] font-semibold">
+            <h1 class="text-slate-700 text-[.95rem] font-semibold">
               {{job.title}}
             </h1>
             <span class="text-slate-600 text-[.8rem]">
@@ -57,7 +59,7 @@
             <span class="font-semibold"> </span>
           </div>
           <div class="py-2">
-            <p class="text-slate-500 text-[.8rem]">{{ job.company_summary }}</p>
+            <p class="text-slate-500 text-[.9rem]">{{ job.company_summary }}</p>
           </div>
           <div class="text-slate-500 text-[.8rem] py-2 grid grid-cols-12 gap-8">
             <div class="col-span-12">
@@ -78,9 +80,53 @@
 
       {% endfor %}
     </div>
-    <div class="col-span-3 py-8">
-      <div class="px-4 border-2 border-slate-200 rounded-md h-fit">
-        subscribe
+    <div class="col-span-3 py-9">
+      <div class="pl-2 h-fit">
+        <div
+          class="h-12 w-12 border-2 border-slate-200 flex justify-center items-center rounded-lg"
+        >
+          <div>
+            <i
+              class="fa-solid fa-magnifying-glass text-[1.5rem] text-slate-500"
+            ></i>
+          </div>
+        </div>
+        <div class="py-5">
+          <h3 class="text-[1.1rem] font-semibold text-slate-600 mb-3">
+            Find your dream job
+          </h3>
+          <p class="text-[.9rem] text-slate-500 mb-3">
+            Find the job that match well with your profile in the best companies
+            in the world
+          </p>
+          <ul>
+            <li class="text-[.9rem] my-2 text-slate-500">
+              <span
+                ><i class="fa-regular fa-circle-check text-emerald-500 mr-2"></i
+              ></span>
+              Showcase your skills beyond a resume
+            </li>
+            <li class="text-[.9rem] my-2 text-slate-500">
+              <span
+                ><i class="fa-regular fa-circle-check text-emerald-500 mr-2"></i
+              ></span>
+              Get discovered by the top companies
+            </li>
+            <li class="text-[.9rem] my-2 text-slate-500">
+              <span
+                ><i class="fa-regular fa-circle-check text-emerald-500 mr-2"></i
+              ></span>
+              Quickly discover relevant roles
+            </li>
+          </ul>
+          <div class="py-5">
+            <a
+              href=""
+              class="bg-emerald-500 text-white py-3 px-3 w-full rounded-sm block w-full text-center"
+              >Sign up for free</a
+            >
+          </div>
+        </div>
       </div>
     </div>
   </div>
