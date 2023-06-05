@@ -1,10 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 <section class="w-full h-[40vh] flex items-center justify-center bg-slate-100">
   <div class="w-full max-w-[1200px] mx-auto py-8 px-5">
-    <p class="text-[2.1rem] font-semibold text-slate-600 mb-3">
-      {{ jobs | length }}+ jobs
-    </p>
-    <h1 class="text-[1.2rem] font-normal text-slate-600">
+    <h1 class="text-[1.8rem] font-normal text-slate-600 mb-4">
       Discover your dream job at top companies
     </h1>
     <div class="mt-5 py-2">
@@ -77,6 +74,21 @@
           </div>
         </div>
       </a>
+      {% empty %}
+      <div class="text-center py-4">
+        <p class="text-slate-500 text-[1rem] py-5">
+          <i class="fa-solid fa-briefcase mb-4"></i> Currently there is no job
+          listing in that industry, but stay tuned !
+        </p>
+        <div class="py-2 w-full text-center">
+          <a
+            href="{% url 'jobs' %}"
+            class="w-80 py-3 px-16 text-center bg-emerald-400 text-white text-[1rem] rounded-sm"
+          >
+            Browse All Jobs</a
+          >
+        </div>
+      </div>
 
       {% endfor %}
     </div>
@@ -117,6 +129,12 @@
                 ><i class="fa-regular fa-circle-check text-emerald-500 mr-2"></i
               ></span>
               Quickly discover relevant roles
+            </li>
+            <li class="text-[.9rem] my-2 text-slate-500">
+              <span
+                ><i class="fa-regular fa-circle-check text-emerald-500 mr-2"></i
+              ></span>
+              Be the first to know about new jobs
             </li>
           </ul>
           <div class="py-5">
