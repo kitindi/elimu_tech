@@ -43,8 +43,21 @@
               {{ related_job.location }}
             </p>
           </div>
+          {% empty %}
+          <p class="text-slate-500 text-[.9rem] py-5">
+            <i class="fa-solid fa-briefcase mr-2"></i> Currently there is no
+            related jobs
+          </p>
           {% endfor %}
         </div>
+      </div>
+      <div class="py-2">
+        <a
+          href="{% url 'jobs' %}"
+          class="block w-full py-3 px-16 text-center bg-emerald-400 text-white text-[1rem] rounded-sm"
+        >
+          Browse All Jobs</a
+        >
       </div>
     </div>
   </div>
@@ -61,14 +74,7 @@
     </div>
   </div>
   <div class="w-full max-w-[1050px] mx-auto grid grid-cols-12 gap-3">
-    <div class="col-span-8 py-10 pr-20 ck ck-content">
-      <a
-        href="{% url 'jobs' %}"
-        class="block w-full py-4 px-16 text-center bg-emerald-400 text-white font-semibold text-[1.2rem]"
-      >
-        Browse All Jobs</a
-      >
-    </div>
+    <div class="col-span-8 py-10 pr-20 ck ck-content"></div>
     <div class="col-span-4"></div>
   </div>
 </section>
