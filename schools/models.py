@@ -79,3 +79,30 @@ class Job(models.Model):
 
     class Meta:
         ordering = ["-posted_on"]
+
+
+BLOG_CATEGORY = (
+    ("Curriculum Planning", "Curriculum Planning"),
+    ("Communication Skills", "Communication Skills"),
+    ("Differentiated Instruction", "Differentiated Instruction"),
+    ("Formative Assessment", "Formative Assessment"),
+    ("Mental Health", "Mental Health"),
+    ("New Teachers", "New Teachers"),
+    ("STEM", "STEM"),
+    ("Student Engagement", "Student Engagement"),
+    ("Teacher Collaboration", "Teacher Collaboration"),
+    ("Teaching Strategies", "Teaching Strategies"),
+    ("Technology Integration", "Technology Integration"),
+)
+
+
+class Blog(models.Model):
+    title = models.CharField(max_length=225)
+    blog_category = models.CharField(max_length=225, choices=BLOG_CATEGORY)
+    blog_intro = models.TextField()
+    content = CKEditor5Field("Text", config_name="extends")
+    thumbnail = models.ImageField()
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-created_on"]

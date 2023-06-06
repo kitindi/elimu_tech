@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import NewsletterForm
-from .models import Job
+from .models import Job, Blog
 from django.db.models import Q
 
 # Create your views here.
@@ -46,4 +46,7 @@ def schools(request):
 
 
 def posts(request):
-    return render(request, "schools/posts.html")
+    blog_posts = Blog.objects.all()
+
+    context = {"blog_posts": blog_posts}
+    return render(request, "schools/posts.html", context)
