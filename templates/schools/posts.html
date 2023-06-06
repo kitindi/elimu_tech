@@ -1,0 +1,81 @@
+{% extends 'base.html' %} {% load static %}{% block content %}
+<section class="w-full h-[40vh] flex items-center justify-center">
+  <div class="w-full max-w-[1200px] mx-auto py-8 grid grid-cols-12">
+    <div class="col-span-2">
+      <img src="{% static 'images/blog_banner.svg' %}" alt="" class="h-56" />
+    </div>
+    <div class="col-span-10 flex items-center justify-start pl-3">
+      <div>
+        <h2 class="text-[1.9rem] text-slate-600 font-semibold">
+          Engage with our blog posts packed with innovative, evidence-based
+          strategies tailored to your educational interests
+        </h2>
+        <p class="text-slate-500 py-2">
+          Learn from inspiring stories and latest edutech trends
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="w-full py-30">
+  <div class="w-full max-w-[1200px] mx-auto py-8 grid grid-cols-12 gap-3">
+    <div class="col-span-9 py-4 pr-8"></div>
+    <div class="col-span-3 py-9">
+      <div class="pl-2 h-fit">
+        <div
+          class="h-12 w-12 border-2 border-slate-200 flex justify-center items-center rounded-lg"
+        >
+          <div>
+            <i
+              class="fa-solid fa-magnifying-glass text-[1.5rem] text-slate-500"
+            ></i>
+          </div>
+        </div>
+        <div class="py-5">
+          <h3 class="text-[1.1rem] font-semibold text-slate-600 mb-3">
+            Find your dream job
+          </h3>
+          <p class="text-[.9rem] text-slate-500 mb-3">
+            Find the job that match well with your profile in the best companies
+            in the world
+          </p>
+          <ul>
+            <li class="text-[.9rem] my-2 text-slate-500">
+              <span
+                ><i class="fa-regular fa-circle-check text-emerald-500 mr-2"></i
+              ></span>
+              Showcase your skills beyond a resume
+            </li>
+            <li class="text-[.9rem] my-2 text-slate-500">
+              <span
+                ><i class="fa-regular fa-circle-check text-emerald-500 mr-2"></i
+              ></span>
+              Get discovered by the top companies
+            </li>
+            <li class="text-[.9rem] my-2 text-slate-500">
+              <span
+                ><i class="fa-regular fa-circle-check text-emerald-500 mr-2"></i
+              ></span>
+              Quickly discover relevant roles
+            </li>
+            <li class="text-[.9rem] my-2 text-slate-500">
+              <span
+                ><i class="fa-regular fa-circle-check text-emerald-500 mr-2"></i
+              ></span>
+              Be the first to know about new jobs
+            </li>
+          </ul>
+          <div class="py-5">
+            <a
+              href=""
+              class="bg-emerald-500 text-white py-3 px-3 w-full rounded-sm block w-full text-center"
+              >Sign up for free</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

@@ -43,3 +43,7 @@ def jobdetails(request, id):
 
 def schools(request):
     return render(request, "schools/schools.html")
+
+
+def posts(request):
+    return render(request, "schools/posts.html")
