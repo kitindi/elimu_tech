@@ -22,7 +22,7 @@
     <div class="col-span-9 py-4 pr-8">
       <div class="grid grid-cols-12 gap-4">
         {% for blog_post in blog_posts %}
-        <a href="#" class="col-span-6">
+        <a href="{% url 'blog_post' id=blog_post.id %}" class="col-span-6">
           <div class="py-4">
             <p class="text-[1.1rem] font-semibold text-amber-500">
               {{ blog_post.blog_category }}
@@ -51,9 +51,11 @@
                 ></i>
               </div>
               <div>
-                <p class="text-sm font-bold text-slate-400">Abdulaziz Sadi</p>
-                <p class="text-sm text-slate-400">
-                  {{ blog_post.created_on |date:"M d, Y" }}
+                <p class="text-[.85rem] font-bold text-slate-400">
+                  Abdulaziz Sadi
+                </p>
+                <p class="text-[.85rem] text-slate-400">
+                  {{ blog_post.created_on |date:"F d, Y" }}
                 </p>
               </div>
             </div>
@@ -65,22 +67,7 @@
     <div class="col-span-3 py-2">
       <div class="pl-2 h-fit">
         <div class="py-2">
-          <form class="" method="GET">
-            <div class="">
-              <input
-                type="text"
-                class="w-full bg-slate-50 py-3 px-5 border-2 border-slate-100 outline-none mb-3"
-                placeholder="Search"
-                name="blog_category"
-              />
-            </div>
-            <div class="">
-              <button
-                class="bg-emerald-500 text-white py-3 px-3 w-full rounded-sm"
-                type="submit"
-              >
-                Search
-              </button>
+         
             </div>
           </form>
         </div>
@@ -95,30 +82,48 @@
           </p>
           {% endcomment %}
           <ul>
-            <li class="text-[1rem] text-slate-600 font-semibold py-2">
+            <li class="text-[1.3rem] font-semibold py-2 text-emerald-500">
               BLOG CATEGORIES
             </li>
-            <li class="text-[.9rem] my-2 text-slate-400 font-semibold">
-              Curriculum Planning
+            <li
+              class="text-[.9rem] my-2 text-slate-400 font-semibold hover:underline"
+            >
+              <a href="">Curriculum Planning</a>
             </li>
-            <li class="text-[.9rem] my-2 text-slate-400 font-semibold">
-              Communication Skills
+            <li
+              class="text-[.9rem] my-2 text-slate-400 font-semibold hover:underline"
+            >
+              <a href="">Communication Skills</a>
             </li>
-            <li class="text-[.9rem] my-2 text-slate-400 font-semibold">
-              New Teachers
+            <li
+              class="text-[.9rem] my-2 text-slate-400 font-semibold hover:underline"
+            >
+              <a href="">New Teachers</a>
             </li>
-            <li class="text-[.9rem] my-2 text-slate-400 font-semibold">STEM</li>
-            <li class="text-[.9rem] my-2 text-slate-400 font-semibold">
-              Student Engagement
+            <li
+              class="text-[.9rem] my-2 text-slate-400 font-semibold hover:underline"
+            >
+              <a href="">STEM</a>
             </li>
-            <li class="text-[.9rem] my-2 text-slate-400 font-semibold">
-              Teacher Collaboration
+            <li
+              class="text-[.9rem] my-2 text-slate-400 font-semibold hover:underline"
+            >
+              <a href="">Student Engagement</a>
             </li>
-            <li class="text-[.9rem] my-2 text-slate-400 font-semibold">
-              Teaching Strategies
+            <li
+              class="text-[.9rem] my-2 text-slate-400 font-semibold hover:underline"
+            >
+              <a href="">Teacher Collaboration</a>
             </li>
-            <li class="text-[.9rem] my-2 text-slate-400 font-semibold">
-              Technology Integration
+            <li
+              class="text-[.9rem] my-2 text-slate-400 font-semibold hover:underline"
+            >
+              <a href=""> Teaching Strategies</a>
+            </li>
+            <li
+              class="text-[.9rem] my-2 text-slate-400 font-semibold hover:underline"
+            >
+              <a href="">Technology Integration</a>
             </li>
           </ul>
         </div>

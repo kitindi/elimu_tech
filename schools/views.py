@@ -50,3 +50,10 @@ def posts(request):
 
     context = {"blog_posts": blog_posts}
     return render(request, "schools/posts.html", context)
+
+
+def post(request, id):
+    blog_post = Blog.objects.get(id=id)
+
+    context = {"blog_post": blog_post}
+    return render(request, "schools/post.html", context)
