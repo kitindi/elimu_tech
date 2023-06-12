@@ -49,7 +49,7 @@
           <div class="flex gap-8">
             <a href="{% url 'jobs' %}">Jobs</a
             ><a href="{% url 'blog' %}">Blog</a
-            ><a href="">Resources & Events</a>
+            ><a href="{% url 'events' %}">Events</a>
           </div>
         </div>
         {% comment %}
@@ -102,7 +102,7 @@
           <ul class="text-slate-300 text-[.95rem] mt-4">
             <li class="mb-2"><a href="{% url 'jobs' %}">Jobs</a></li>
             <li class="mb-2"><a href="{% url 'blog' %}">Blog</a></li>
-            <li class="mb-2"><a href="#">Events</a></li>
+            <li class="mb-2"><a href="{% url 'events' %}">Events</a></li>
           </ul>
         </div>
         <div class="col-span-2 pl-24 pt-6">

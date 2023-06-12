@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import NewsletterForm
-from .models import Job, Blog
+from .models import Job, Blog, Event
 from django.db.models import Q
 
 # Create your views here.
@@ -57,3 +57,17 @@ def post(request, id):
 
     context = {"blog_post": blog_post}
     return render(request, "schools/post.html", context)
+
+
+def events(request):
+    event_list = Event.objects.all()
+    print(event_list)
+    context = {"event_list": event_list}
+    return render(request, "schools/events.html", context)
+
+
+def event(request, id):
+    event = Event.objects.get(id=id)
+
+    context = {"event": event}
+    return render(request, "schools/event.html", context)

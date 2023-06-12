@@ -3,7 +3,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls.static import static
 from django.urls import path, include
-from schools.views import home, jobboard, jobdetails, posts, post
+from schools.views import home, jobboard, jobdetails, posts, post, events, event
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -12,6 +12,8 @@ urlpatterns = [
     path("job/<int:id>", jobdetails, name="job"),
     path("blog/", posts, name="blog"),
     path("blog/<int:id>", post, name="blog_post"),
+    path("events/", events, name="events"),
+    path("events/<int:id>", event, name="event"),
     path("ckeditor5/", include("django_ckeditor_5.urls")),
 ]
 

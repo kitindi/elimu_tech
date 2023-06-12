@@ -118,3 +118,7 @@ class Event(models.Model):
     speaker_thumbnail = models.ImageField(default="default.png")
     speaker_description = models.TextField()
     event_description = CKEditor5Field("Text", config_name="extends")
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-created_on"]

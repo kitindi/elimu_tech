@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% load static %}{% block content %}
+<section class="w-full h-[50vh] flex items-center justify-center bg-emerald-600">
+  <div class="w-full max-w-[1200px] mx-auto py-8 grid grid-cols-12">
+    <div class="col-span-12 flex items-center justify-start pl-3">
+      <div>
+        <h2 class="text-[3.25rem] text-white font-semibold">
+          Find out what's happening up next
+        </h2>
+        <h2 class="text-[2.3rem] text-white font-normal">
+          Team up with the best talents in your field and connect
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="w-full py-24">
+  <div class="w-full max-w-[1200px] mx-auto"></div>
+
+  <div class="w-full max-w-[1000px] mx-auto py-8 flex flex-col items-center">
+        {% for event in event_list %}
+        <a  href="{% url 'event' id=event.id %}" class="grid grid-cols-12 py-4  mb-4 border-b-2 border-slate-200">
+            <div class="col-span-3 p-4 relative ">
+              <img src="{{ event.speaker_thumbnail.url }}" alt=""   class=" h-auto max-w-xs md:h-full md:w-48"/>
+              <div class="absolute top-0 left-0 h-fit p-2 w-fit bg-emerald-400 index-3"><p class="text-sm text-white">{{ event.event_date }}</p></div>
+            </div>
+            <div class="col-span-8 p-2">
+              <p class="text-[1.2rem] font-[500] text-slate-500">{{ event.event_speaker }}</p>
+              <p class="text-[1rem] font-[200] text-slate-500 mb-2">{{ event.speaker_occupation }}</p>
+               <div class="h-1 bg-emerald-500 mb-3"></div>
+              <p class="text-[1.3rem] font-[500] text-slate-600">{{ event.event_title }}</p>
+              <div>
+             
+              <p class="text-[1rem] font-[200] mb-3  text-slate-400">{{ event.event_time }}</p>
+              </div>
+            </div>
+         
+          </a>
+        {% endfor %}
+    </div>
+    <div class="col-span-3 py-2"></div>
+  </div>
+</section>
+
+{% endblock content %}
