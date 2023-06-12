@@ -106,3 +106,15 @@ class Blog(models.Model):
 
     class Meta:
         ordering = ["-created_on"]
+
+
+class Event(models.Model):
+    event_title = models.CharField(max_length=255)
+    event_date = models.CharField(max_length=255)
+    event_time = models.CharField(max_length=255)
+    event_location = models.CharField(max_length=255)
+    event_speaker = models.CharField(max_length=255)
+    speaker_occupation = models.CharField(max_length=255)
+    speaker_thumbnail = models.ImageField(default="default.png")
+    speaker_description = models.TextField()
+    event_description = CKEditor5Field("Text", config_name="extends")
