@@ -6,5 +6,8 @@ venv/
 
 
 # SQLite database files
+# Text backup files
+*.bak
 
+# Database
 *.sqlite3
